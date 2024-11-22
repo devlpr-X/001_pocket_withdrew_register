@@ -1,0 +1,17 @@
+
+backend/backend/__init__.py
+backend/backend/__pycache__/settings.cpython-311.pyc
+backend/appbackend/__pycache__/admin.cpython-311.pyc
+backend/appbackend/__pycache__/edituser.cpython-311.pyc
+backend/appbackend/__pycache__/edituser.cpython-311.pyc
+backend/appbackend/__pycache__/views.cpython-311.pyc
+backend/appbackend/migrations/__init__.py
+backend/appbackend/models.py
+backend/backend/__pycache__/__init__.cpython-311.pyc
+backend/backend/__pycache__/urls.cpython-311.pyc
+backend/backend/__pycache__/wsgi.cpython-311.pyc
+backend/appbackend/__pycache__/__init__.cpython-311.pyc
+backend/appbackend/__init__.py
+backend/appbackend/__pycache__/models.cpython-311.pyc
+backend/appbackend/__pycache__/apps.cpython-311.pyc
+backend/appbackend/migrations/__pycache__/__init__.cpython-311.pyc
