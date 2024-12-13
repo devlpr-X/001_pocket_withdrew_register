@@ -210,7 +210,7 @@ def dt_getalluser(request):
         lname = respRow[0]['lname']
         cursor.close() # close the cursor. ALWAYS
         respdata = respRow # creating response logged user information
-        resp = sendResponse(request, 1007, respdata, action) # response beldej baina. 6 keytei.
+        resp = sendResponse(request, 1014, respdata, action) # response beldej baina. 6 keytei.
     except:
         # edituser service deer aldaa garval ajillana. 
         action = jsons["action"]

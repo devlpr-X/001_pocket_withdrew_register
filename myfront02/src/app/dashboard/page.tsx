@@ -14,6 +14,17 @@ interface Data {
   education: [];
 }
 
+interface Entry {
+  id: number;
+  amount: number;
+  description: string;
+  createddate: string;
+  updateddate: string;
+  transactiontypeid: number;
+  categoryname: string;
+  categoryid: number;
+}
+
 interface Response {
   resultCode: number;
   resultMessage: string;
@@ -27,6 +38,7 @@ export default function Dashboard() {
   const [user, setUser] = useState<Data | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [transitions, setTransitions] = useState<Entry[]>([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -49,7 +61,17 @@ export default function Dashboard() {
         };
 
         const response: Response = await sendRequest(surl, smethod, sbody);
+        
+        const transitions =  await sendRequest("http://localhost:8000/transaction/", "POST", {
+          action: "getalltransaction",
+          uid: parsedUser.uid
+        });
 
+        console.log("getuserresume");
+        console.log(response);
+        console.log("transitions");
+        console.log(transitions);
+        
         if (response.resultCode === 1006) {
           setUser(response.data[0]); // Assuming the API response structure
           // console.log(response);
