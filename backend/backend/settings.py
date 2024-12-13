@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'appbackend', # uusgesen app-aa holboj ugch baina.
 ]
 
@@ -50,7 +51,22 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -148,7 +164,9 @@ resultMessages = {
     1002 : "Амжилттай нэвтэрлээ.",
     1003 : "Амжилттай баталгаажлаа.",
     1004 : "Хэрэглэгчийн нэр, нууц үг буруу байна.",    
-    1005 : "edituser амжилттай",
+    1005 : "edituser амжилттай",    
+    1006 : "getuserresume success",
+    1007 : "getalluser success",
     3001 : "ACTION буруу",
     3002 : "METHOD буруу",
     3003 : "JSON буруу",
@@ -173,6 +191,8 @@ resultMessages = {
     3022 : "Нууц үг амжилттай солигдлоо.",
     3023 : "Хуучин нууц үг таарсангүй",
     3024 : "edituser service key дутуу",
+    3025 : "getuserresume service key dutuu", 
+    3026 : "getalluser service key dutuu", 
     5001 : "Нэвтрэх сервис дотоод алдаа",
     5002 : "Бүртгүүлэх сервис дотоод алдаа",
     5003 : "Forgot service дотоод алдаа",
@@ -180,6 +200,8 @@ resultMessages = {
     5005 : "reset password service дотоод алдаа ",
     5006 : "change password service дотоод алдаа ",
     5007 : "edituser service дотоод алдаа",
+    5008 : "getuserresume service dotood aldaa",
+    5009 : "getalluser service dotood aldaa",
 }
 # resultMessage
 

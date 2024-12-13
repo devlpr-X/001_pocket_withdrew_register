@@ -42,6 +42,7 @@ def dt_gettime(request):
 def dt_login(request):
     jsons = json.loads(request.body) # get request body
     action = jsons['action'] # get action key from jsons
+    print(jsons)
     # print(action)
     
     # url: http://localhost:8000/user/
