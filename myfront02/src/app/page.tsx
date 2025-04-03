@@ -50,25 +50,27 @@ export default function Dashboard() {
   };
 
   return (
+    
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-8">
+      
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">
-        HOME
+        Нүүр хуудас
       </h1>
 
       <div className="bg-gray-50 p-4 rounded-md shadow-md">
         <h2 className="text-2xl font-semibold text-gray-700">
           {user && (
             <>
-              Welcome, {user.fname} {user.lname}!
+              Тавтай морилно уу, {user.fname} {user.lname}!
               {/* Additional components or actions for the logged-in user */}
               <p className="text-lg text-gray-600">
-                Last Login: {new Date(user.lastlogin).toLocaleString()}
+                Сүүлд нэвтэрсэн: {new Date(user.lastlogin).toLocaleString()}
               </p>
             </>
           )}
           {!user && (
             <>
-              Welcome, Guest!
+              Тавтай морилно уу, Зочин!
               {/* Optionally, display some content for guest users */}
             </>
           )}
@@ -76,16 +78,23 @@ export default function Dashboard() {
           <button
             onClick={() => router.push("/changepassword")}
             style={{ marginTop: "10px" }} 
-            className="bg-gray-300 text-white px-6 py-1 rounded-md hover:bg-gray-700 transition"
+            className="bg-indigo-400 text-white px-6 py-2 rounded-md hover:bg-indigo-500 transition"
           >
-            Change Password
+            Нууц үг өөрчлөх
           </button>{" "} <br />
           <button
             onClick={() => router.push("/edituser")}
-            className="bg-gray-300 text-white px-6 py-1 rounded-md hover:bg-gray-700 transition"
+            className="bg-indigo-400 text-white px-6 py-2 rounded-md hover:bg-indigo-500 transition"
             style={{ marginTop: "10px" }} 
           >
-            Edit user
+            Хэрэглэгч засах
+          </button> <br />
+          <button
+            onClick={() => router.push("/dashboard")}
+            className="bg-indigo-400 text-white px-6 py-2 rounded-md hover:bg-indigo-500 transition"
+            style={{ marginTop: "10px" }} 
+          >
+            Dashboard
           </button>
         </h2>
 
@@ -103,7 +112,7 @@ export default function Dashboard() {
           onClick={handleLogout}
           className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition"
         >
-          Logout
+          Гарах
         </button>
       </div>
     </div>

@@ -226,7 +226,7 @@ def dt_register(request):
             cursor1.close() # closing cursor1
             
             subject = "User burtgel batalgaajuulah mail"
-            bodyHTML = F"""<a target='_blank' href=http://localhost:8000/user?token={token}>CLICK ME</a>
+            bodyHTML = F"""<a target='_blank' href=http://localhost:3000/verified?token={token}>CLICK ME</a>
             
             """
             sendMail(uname,subject,bodyHTML)
@@ -314,7 +314,7 @@ def dt_forgot(request):
             
             # forgot password verify hiih mail
             subject = "Nuuts ug shinechleh"
-            body = f"<a href='http://localhost:8000/user?token={token}'>Martsan nuuts ugee shinechleh link</a>"
+            body = f"<a href='http://localhost:3000/verified2?token={token}'>Martsan nuuts ugee shinechleh link</a>"
             sendMail(uname, subject, body)
             
             # sending Response

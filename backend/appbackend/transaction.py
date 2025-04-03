@@ -106,6 +106,7 @@ def dt_registtransaction(request):
         amount = jsons['amount']
         description = jsons['description']
         category = jsons['category']
+        createddate = jsons['createddate']
         transactiontype = jsons['transactiontype']
     except: # uid, fname, lname key ali neg ni baihgui bol aldaanii medeelel butsaana
         action = jsons['action']
@@ -118,7 +119,7 @@ def dt_registtransaction(request):
         cursor = myConn.cursor() # cursor uusgej baina
         query = F"""INSERT INTO t_expenseincome(
                         uid, amount, description, createddate, category, transactiontype) 
-                        VALUES ({uid}, {amount}, '{description}', now(), {category}, {transactiontype}) 
+                        VALUES ({uid}, {amount}, '{description}', '{createddate}', {category}, {transactiontype}) 
                     RETURNING id""" 
         cursor.execute(query) # executing cursor1
         myConn.commit() # updating database
@@ -138,7 +139,8 @@ def dt_registtransaction(request):
         cursor.close() # close the cursor. ALWAYS
         respdata = respRow 
         resp = sendResponse(request, 1011, respdata, action) # response beldej baina. 6 keytei.
-    except:
+    except Exception as e:
+        print(str(e))
         # dt_registtransaction service deer aldaa garval ajillana. 
         action = jsons["action"]
         respdata = [] # hooson data bustaana.

@@ -85,19 +85,19 @@ export default function Register() {
     }
   };
 
-  if (loading) return <p className="text-center text-xl">Loading...</p>; // Show loading state while checking if the user is logged in
+  if (loading) return <p className="text-center text-xl">Уншиж байна...</p>; // Show loading state while checking if the user is logged in
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-md w-full bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
+        <h2 className="text-2xl font-bold text-center mb-6">Бүртгүүлэх</h2>
         <form onSubmit={handleRegister} className="space-y-4">
           <div>
             <label
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              Email
+              Имейл
             </label>
             <input
               type="email"
@@ -115,7 +115,7 @@ export default function Register() {
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
             >
-              Password
+              Нууц үг
             </label>
             <input
               type="password"
@@ -133,7 +133,7 @@ export default function Register() {
               htmlFor="firstName"
               className="block text-sm font-medium text-gray-700"
             >
-              First Name
+              Нэр
             </label>
             <input
               type="text"
@@ -151,7 +151,7 @@ export default function Register() {
               htmlFor="lastName"
               className="block text-sm font-medium text-gray-700"
             >
-              Last Name
+              Овог
             </label>
             <input
               type="text"
@@ -182,9 +182,9 @@ export default function Register() {
         </form>
 
         <p className="mt-4 text-sm text-gray-500 text-center">
-          Already have an account?{" "}
+          Та бүртгүүлсэн үү?{" "}
           <a href="/login" className="text-indigo-500 hover:underline">
-            Login here
+            Нэвтрэх
           </a>
         </p>
       </div>

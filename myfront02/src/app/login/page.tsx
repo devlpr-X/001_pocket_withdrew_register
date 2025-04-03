@@ -59,6 +59,8 @@ export default function Login() {
       if (response.resultCode === 1002 && response.data?.length) {
         const userData = response.data[0];
         localStorage.setItem("token", JSON.stringify(userData)); // Save user data
+        console.log("Stored user data:", JSON.parse(localStorage.getItem("token"))); // Log the stored data
+        console.log("user data:", JSON.parse(localStorage.getItem("token"))['uid']); // Log the stored data
         router.push("/dashboard");
       } else {
         setError(response.resultMessage);
@@ -77,7 +79,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="max-w-md w-full bg-white shadow-lg rounded-lg p-6">
         <h2 className="text-2xl font-bold text-center mb-6">
-          Login to Your Account
+          Өөрийн хаягаар нэвтрэх
         </h2>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
@@ -85,7 +87,7 @@ export default function Login() {
               htmlFor="email"
               className="block text-sm font-medium text-gray-700"
             >
-              Email
+              Имейл
             </label>
             <input
               type="email"
@@ -102,7 +104,7 @@ export default function Login() {
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
             >
-              Password
+              Нууц үг
             </label>
             <input
               type="password"
@@ -120,21 +122,21 @@ export default function Login() {
             type="submit"
             className="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-400"
           >
-            Login
+            Нэвтрэх
           </button>
         </form>
 
         <p className="mt-4 text-sm text-gray-500 text-center">
-          Don't have an account?{" "}
+          Хаяг нээгээгүй юм биш биз?{" "}
           <a href="register" className="text-indigo-500 hover:underline">
-            Sign up
+            Бүртгүүлэх
           </a>
         </p>
 
         <p className="mt-2 text-sm text-gray-500 text-center">
-          Forgot your password?
+          Нууц үгээ мартсан уу?
           <a href="/forgot" className="text-indigo-500 hover:underline">
-            Reset it here
+            Энд дарж шинэчилнэ үү
           </a>
         </p>
       </div>

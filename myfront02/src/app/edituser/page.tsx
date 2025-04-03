@@ -115,17 +115,17 @@ export default function EditUser() {
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-8">
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">
-        Edit User Info
+        Хэрэглэгчийн мэдээлэл засах
       </h1>
 
       <div className="bg-gray-50 p-4 rounded-md shadow-md">
         <h2 className="text-2xl font-semibold text-gray-700">
-          Edit your details
+          Хэрэглэгчийн дэлгэрэнгүй өөрчлөх
         </h2>
 
         <div className="mt-4">
           <label className="block text-sm font-medium text-gray-700">
-            First Name
+            Нэр
           </label>
           <input
             type="text"
@@ -137,7 +137,7 @@ export default function EditUser() {
 
         <div className="mt-4">
           <label className="block text-sm font-medium text-gray-700">
-            Last Name
+            Овог
           </label>
           <input
             type="text"
@@ -158,7 +158,7 @@ export default function EditUser() {
             onClick={handleSaveChanges}
             className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition"
           >
-            Save Changes
+            Хадгалах
           </button>
         </div>
       </div>
